@@ -1,0 +1,7 @@
+{# vi: set ft=jinja: #}
+{% import_yaml "elasticsearch/defaults.yaml" as defaults %}
+
+{% set pkg = salt['pillar.get']('elasticsearch:lookup', default={}, merge=True) %}
+{% do defaults.elasticsearch.update(pkg) %}
+
+{% set elasticsearch = salt['pillar.get']('elasticsearch', default=defaults['elasticsearch'], merge=True) %}
