@@ -6,6 +6,7 @@ elasticsearch-service:
     - name: elasticsearch
     - enable: True
     - watch:
+      - file: /etc/elasticsearch/elasticsearch.yml
       - file: /etc/default/elasticsearch
       - pkg: elasticsearch_package
     
