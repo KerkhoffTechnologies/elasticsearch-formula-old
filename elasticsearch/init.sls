@@ -1,7 +1,7 @@
 {# vi: set ft=jinja: #}
 {% from "elasticsearch/map.jinja" import elasticsearch with context %}
 
-{%- if grains["os"]|lower == 'debian' %}
+{%- if grains["os_family"]|lower == 'debian' %}
 include:
   - elasticsearch.repository
   - elasticsearch.install
